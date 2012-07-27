@@ -3,7 +3,7 @@
  * COPS (Calibre OPDS PHP Server) class file
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Sébastien Lucas <sebastien@slucas.fr>
+ * @author     Sï¿½bastien Lucas <sebastien@slucas.fr>
  */
 
     if (!isset($config))
@@ -39,7 +39,7 @@
     /*
      * The internal directory set in nginx config file
      */
-    $config['cops_title_default'] = "Sebastien's COPS"; 
+    $config['cops_title_default'] = "COPS"; 
 
     
     /*
@@ -47,8 +47,9 @@
      * Possible values are :
      *   X-Accel-Redirect : For Nginx
      *   X-Sendfile : For Lightttpd or Apache (with mod_xsendfile)
+     *   direct : if your calibre_internal_directory is not in your docroot use readfile insted
      */
-    $config['cops_x_accel_redirect'] = "X-Accel-Redirect";
+    $config['cops_x_accel_redirect'] = "direct";
     
     /*
      * Height of thumbnail image for OPDS
