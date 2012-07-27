@@ -3,7 +3,7 @@
  * COPS (Calibre OPDS PHP Server) 
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Gordon Page <gordon@incero.com> with integration/modification by Sébastien Lucas <sebastien@slucas.fr>
+ * @author     Gordon Page <gordon@incero.com> with integration/modification by Sï¿½bastien Lucas <sebastien@slucas.fr>
  */
     
     require_once ("config.php");
@@ -88,5 +88,11 @@
     }
     $file = $book->getFilePath ($type, $idData, true);
     header('Content-Disposition: attachement; filename="' . basename ($file) . '"');
-    header ($config['cops_x_accel_redirect'] . ": " . $config['calibre_internal_directory'] . $file);
+    /*Mod By Syx */
+	if ($config['cops_x_accel_redirect'] == "direct" ) {
+		readfile($config['calibre_internal_directory'] . $file);
+		}
+	else {
+		header ($config['cops_x_accel_redirect'] . ": " . $config['calibre_internal_directory'] . $file);
+		}
 ?>
