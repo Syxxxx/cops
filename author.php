@@ -3,7 +3,7 @@
  * COPS (Calibre OPDS PHP Server) class file
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Sébastien Lucas <sebastien@slucas.fr>
+ * @author     Sï¿½bastien Lucas <sebastien@slucas.fr>
  */
 
 require_once('base.php');
@@ -21,7 +21,7 @@ class Author extends Base {
     }
     
     public function getUri () {
-        return "?page=".parent::PAGE_AUTHOR_DETAIL."&id=$this->id";
+        return "/author_detail/$this->id";
     }
     
     public function getEntryId () {
@@ -33,7 +33,7 @@ class Author extends Base {
         $nAuthors = parent::getDb ()->query('select count(*) from authors')->fetchColumn();
         $entry = new Entry (localize("authors.title"), self::ALL_AUTHORS_ID, 
             str_format (localize("authors.alphabetical"), $nAuthors), "text", 
-            array ( new LinkNavigation ("?page=".parent::PAGE_ALL_AUTHORS)));
+            array ( new LinkNavigation ("/all_author/")));
         return $entry;
     }
     
