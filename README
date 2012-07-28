@@ -93,6 +93,11 @@ If you choose to put your Calibre directory inside your web directory then you
 will have to edit /etc/nginx/mime.types to add this line :
 application/epub+zip epub;
 
+for Apache (in synology nas) edit /usr/syno/apache/conf/mime.types to add this line :
+application/x-cbr                               cbr cba cbt cbz cb7
+and reload apache :
+/usr/syno/etc/rc.d/S97apache-user.sh restart
+
 = Notes on Opensearch =
 
 Opensearch allow searching through an OPDS catalog. After many tests, I've been 
@@ -147,7 +152,7 @@ It also seems to work with Stanza.
 
 = Copyright & License =
 
-COPS - 2012 (c) Sébastien Lucas <sebastien@slucas.fr>
+COPS - 2012 (c) Sï¿½bastien Lucas <sebastien@slucas.fr>
 
 See COPYING and file headers for license info
 
